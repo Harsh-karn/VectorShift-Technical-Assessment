@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Base Node Styling */
+.node-container {
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 0;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.node-container:hover {
+  border-color: #8b949e;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.node-container.selected {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3), 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.node-header {
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #30363d;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.node-content {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs and Selects */
+.node-container input[type="text"],
+.node-container textarea,
+.node-container select {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.15s ease;
+  resize: none;
+}
+
+.node-container textarea {
+  min-height: 40px;
+}
+
+.node-container input[type="text"]:focus,
+.node-container textarea:focus,
+.node-container select:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.node-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8b949e;
+}
+
+/* Custom ReactFlow Handles */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: #58a6ff;
+  border: 2px solid #0d1117;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+  background: #79c0ff;
+}
+
+/* UI Toolbar */
+.toolbar-container {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.draggable-node {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #c9d1d9;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: grab;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.draggable-node:hover {
+  background: #30363d;
+  border-color: #8b949e;
+  transform: translateY(-2px);
+}
+
+/* Submit Button */
+.submit-button {
+  background: #238636;
+  color: #ffffff;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.submit-button:hover {
+  background: #2ea043;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 160, 67, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Alert Styling for success */
+.swal2-popup {
+  background: #161b22 !important;
+  color: #c9d1d9 !important;
+  border: 1px solid #30363d;
+  border-radius: 12px !important;
+}
+
+.swal2-title {
+  color: #ffffff !important;
+}
